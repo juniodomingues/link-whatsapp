@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Gerador de Link do WhastsApp</title>
+    <script src="script.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <form action="">
+                        <label for="Telefone" class="form-label">Telefone</label><br>
+                        <input id="telefone" class="form-control" type="text" onkeyup="mascaraFone(event)"><br>
+                        <label for="mensagem" class="form-label">Mensagem</label> <br>
+                        <input id="mensagem" class="form-control" type="text"><br>
+                        <input type="button" class="btn btn-primary" onclick="criar_frase()" value="Gerar URL">
+                        <input type="button" id="btn_gera_outro" class="btn btn-secondary " value="Gerar Outro">
+                    </form>
+                    <p id="link_whats"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
