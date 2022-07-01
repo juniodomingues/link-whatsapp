@@ -6,17 +6,17 @@ function criar_frase(){
         
     }else{
         var mensagem = document.getElementById("mensagem").value;
+        mensagem = mensagem.replace(/ /g, "%20");
+
+        telefone = telefone.replace(/[^0-9]/g, '');
+
         var link_whats = "https://api.whatsapp.com/send?phone=55" + telefone + "&text=" + mensagem;
-        link_whats = link_whats.replace(/ /g, "%20")
+       
+
         document.getElementById("link_whats").innerHTML = "<b>Link Gerado:</b><br> <input id='link_whats1' class='form-control' type'text' value='" + 
         link_whats +"''> <br> <input type='button' class='btn btn-secondary' onclick='copiar()' value='Copiar'>" ;
 
     }
-}
-function copiar(){
-    
-    textArea = document.getElementById("link_whats1").select;
-    navigator.clipboard.writeText(textArea.value);
 }
 function mascaraFone(event) {
     var valor = document.getElementById("telefone").attributes[0].ownerElement['value'];
@@ -40,4 +40,11 @@ function mascaraFone(event) {
     document.getElementById("telefone").attributes[0].ownerElement['value'] = retorno;
 }
 
+document.getElementById('link_whats1').addEventListener('click', copiar);
+
+function copiar(){
+    
+    document.querySelector("#link_whats1").select();
+    document.execCommand("copy");
+}
 //Copiar e colar
