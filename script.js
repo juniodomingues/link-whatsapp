@@ -1,4 +1,5 @@
-function criar_frase(){
+//Função para criar o link
+function criar_link(){
             
     var telefone = document.getElementById("telefone").value;
     if(telefone ==""){
@@ -18,6 +19,7 @@ function criar_frase(){
 
     }
 }
+//Função para mascarar o telefone. Deixar no formato (11)99999-9999
 function mascaraFone(event) {
     var valor = document.getElementById("telefone").attributes[0].ownerElement['value'];
     var retorno = valor.replace(/\D/g, "");
@@ -40,11 +42,16 @@ function mascaraFone(event) {
     document.getElementById("telefone").attributes[0].ownerElement['value'] = retorno;
 }
 
+//Função para compiar o link gerado
 document.getElementById('link_whats1').addEventListener('click', copiar);
 
 function copiar(){
     
     document.querySelector("#link_whats1").select();
     document.execCommand("copy");
+}
+//Função para atualizar a página
+function gerar_outro(){
+    document.location.reload(true);
 }
 //Copiar e colar
